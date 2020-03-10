@@ -1,0 +1,45 @@
+﻿<Page x:Class="projetWPF2.PageEquipe"
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+      xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+      xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes"
+      xmlns:local="clr-namespace:projetWPF2"
+      mc:Ignorable="d" 
+      d:DesignHeight="600" d:DesignWidth="1200"
+      Title="PageEquipe">
+    <Grid MaxHeight="600" MaxWidth="1200">
+        <ListView x:Name="listeEquipes" SelectedItem="{Binding Path=idEquipeProperty}" ItemsSource="{Binding}" SelectionChanged="listeEquipe_SelectionChanged" HorizontalAlignment="Left" BorderBrush="Black" Width="200" VerticalAlignment="Top" Height="200" Margin="100,100,0,0" MaxWidth="200" MaxHeight="200">
+        <ListView.View>
+
+                <GridView>
+                    <GridViewColumn Header="nom equipe" DisplayMemberBinding="{Binding Path=nomEquipeProperty,Mode=OneWay}" />
+            </GridView>
+        </ListView.View>
+    </ListView>
+
+    <ListView x:Name="listePersonnes" ItemsSource="{Binding}" HorizontalAlignment="Right" BorderBrush="Black" Background="#FFA4A4A4" Width="400" VerticalAlignment="Top" Margin="0,100,360,0" Height="200" MaxWidth="400" MaxHeight="200">
+        <ListView.View>
+            <GridView>
+                <GridViewColumn Header="Nom" DisplayMemberBinding="{Binding nomPersonneProperty}" />
+                    <GridViewColumn Header="Prenom" DisplayMemberBinding="{Binding prenomPersonneProperty}" />
+                </GridView>
+        </ListView.View>
+    </ListView>
+        <Button x:Name="supprimer_une_equipe" Content="Supprimer une equipe" HorizontalAlignment="Left" Height="35" Margin="100,0,0,200" VerticalAlignment="Bottom" Width="200" Click="supprimer_equipe" />
+        <Button x:Name="AddEnsemble" Content="Ajouter une equipe" HorizontalAlignment="Left" Height="35" Margin="100,0,0,120" VerticalAlignment="Bottom" Width="200" Click="AddEquipe_Click" />
+    <Button x:Name="supprimer_une_plage" Content="Supprimer une personne" HorizontalAlignment="Left" Height="35" Margin="440,0,0,200" VerticalAlignment="Bottom" Width="200" Click="supprimerPersonne" />
+    <Button x:Name="ajouter_une_plage" Content="Ajouter une personne" HorizontalAlignment="Right" Height="35" Margin="900,0,100,200" VerticalAlignment="Bottom" Width="200" Click="Ajouter_Personne" />
+    <Button x:Name="Retour" Content="Retour" HorizontalAlignment="Left" Height="35" Margin="50,0,0,50" VerticalAlignment="Bottom" Width="200" Click="retour_back" />
+    <ListView x:Name="listeAutre" ItemsSource="{Binding}" HorizontalAlignment="Right" BorderBrush="Black" Width="200" VerticalAlignment="Top" Height="200" Margin="0,100,100,0" MaxWidth="200" MaxHeight="200">
+        <ListView.View>
+
+            <GridView>
+                <GridViewColumn Header="Nom"  DisplayMemberBinding="{Binding nomPersonneProperty, Mode=OneWay}" />
+                <GridViewColumn Header="Prenom" DisplayMemberBinding="{Binding prenomPersonneProperty, Mode=OneWay}" />
+            </GridView>
+        </ListView.View>
+    </ListView>
+    <TextBox Name="nomEquipeTextBox" materialDesign:HintAssist.Hint="NOM EQUIPE" Style="{StaticResource MaterialDesignFloatingHintTextBox}" FontFamily="Champagne &amp; Limousines" FontSize="18" Width="200" Height="50" HorizontalAlignment="Left" VerticalAlignment="Bottom" Margin="340,0,0,120"/>
+    </Grid>
+</Page>

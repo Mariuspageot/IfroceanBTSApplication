@@ -1,0 +1,24 @@
+﻿<Page x:Class="projetWPF2.PageMenu"
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+      xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+      xmlns:local="clr-namespace:projetWPF2"
+      mc:Ignorable="d" 
+      d:DesignHeight="600" d:DesignWidth="1200"
+      Title="PageMenu">
+
+    <Grid>
+        <Button Content="Quitter" HorizontalAlignment="Right" Margin="0,0,25,25" VerticalAlignment="Bottom" Width="250" Click="Exit" Height="100"/>
+
+        <Button Name="BtnPersonne" Content="Personnes" HorizontalAlignment="Left" Margin="25,25,0,0" VerticalAlignment="Top" Width="250" Click="ListPersonnes" Height="250"/>
+        <Button Name="BtnCommune" Content="Communes" HorizontalAlignment="Left" Margin="25,0,0,25" VerticalAlignment="Bottom" Width="250" Click="ListCom" Height="250"/>
+        <Button Name="BtnPlage" Content="Plages" HorizontalAlignment="Left" Margin="325,0,0,25" VerticalAlignment="Bottom" Width="250" Click="ListPlage" Height="250"/>
+        <Button Name="BtnEquipe" Content="Equipes" HorizontalAlignment="Left" Margin="625,25,0,0" VerticalAlignment="Top" Width="250" Click="Equipe" Height="250" Background="#FF2196F3"/>
+        <Button Name="BtnEspece" Content="Especes" HorizontalAlignment="Right" Margin="0,25,25,0" VerticalAlignment="Top" Width="250" Click="Especes" Height="250" Background="#FF2196F3"/>
+        <Button Name="BtnEnsemble" Content="Ensemble de plages" HorizontalAlignment="Left" Margin="325,25,0,0" VerticalAlignment="Top" Width="250" Click="EnsemblePlages" Height="250"/>
+        <Button Content="Etudes" HorizontalAlignment="Left" Margin="625,0,0,25" VerticalAlignment="Bottom" Width="250" Click="Etudes" Height="250" Background="#FF747474"/>
+        <Button Content="Profil" HorizontalAlignment="Right" Margin="0,0,25,150" VerticalAlignment="Bottom" Width="250" Click="ListDep" Height="125" Background="#FF747474"/>
+
+    </Grid>
+</Page>

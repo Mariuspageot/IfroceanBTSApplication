@@ -1,0 +1,83 @@
+<DockPanel>
+        <Menu DockPanel.Dock="Top">
+            <MenuItem Header="_File">
+
+                <Separator />
+                <MenuItem Header="_Exit" />
+            </MenuItem>
+        </Menu>
+        <StackPanel >
+            <TabControl Margin="0,0,0,0" Height="394">
+
+                <TabItem Header="New etude">
+
+                </TabItem>
+                <TabItem Header="Etude"></TabItem>
+                <TabItem Header="New plage"></TabItem>
+                <TabItem Header="Plage"></TabItem>
+                <TabItem Header="New commun"></TabItem>
+                <TabItem Header="Commun"></TabItem>
+                <TabItem Header="New departement">
+
+                </TabItem>
+                <TabItem Header="Departement"></TabItem>
+                <TabItem Header="New equipe"></TabItem>
+                <TabItem Header="Equipe"></TabItem>
+                
+                
+                <TabItem Header="New personne">
+                    <Grid Name ="grid" Height="300" Margin="0,0,0.300,0" VerticalAlignment="Top">
+                        <StackPanel>
+
+                            <Label Content="nom"></Label>
+                            <!-- <TextBox Name="nomTextBox" TextChanged="nomChanged"/> -->
+                            <TextBox Name="nomTextBox" Height="20"/>
+                            <Label Content="prenom"></Label>
+                            <!-- <TextBox Name="prenomTextBox" TextChanged="prenomChanged"/> -->
+                            <TextBox Name="prenomTextBox" Height="20" Margin="0,0,0.300,0" />
+                            <Label Content="Groupe"></Label>
+                            <Grid>
+                                <StackPanel>
+                                    <ComboBox>
+                                        <ComboBoxItem Content="{Binding nomPersonneProperty}"></ComboBoxItem>
+                                    </ComboBox>
+                                </StackPanel>
+                            </Grid>
+                            <Button x:Name="nomPrenomButton" Content="{Binding concatProperty}" MouseDoubleClick="nomPrenomButton_MouseDoubleClick" BorderBrush="#FF545454" BorderThickness="1,1,1,1" Height="35" Margin="0,5,206.333,0" HorizontalAlignment="Right" Width="427" RenderTransformOrigin="0.5,2.31" >
+                                <Button.Background>
+                                    <RadialGradientBrush>
+                                        <GradientStop Color="Green"/>
+                                    </RadialGradientBrush>
+                                </Button.Background>
+                            </Button>
+                        </StackPanel>
+                    </Grid>
+                </TabItem>
+                <TabItem Header="Personne">
+                    <StackPanel>
+                        <Grid Margin="10">
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition Width="10*"/>
+                                <ColumnDefinition Width="9*"/>
+                            </Grid.ColumnDefinitions>
+                            <DataGrid x:Name="listePersonnes" ItemsSource="{Binding}" AutoGenerateColumns="false" HorizontalAlignment="Left" Margin="286,0,0,0" BorderBrush="Black" Background="#FFA4A4A4" SelectionChanged="listePersonnes_SelectionChanged" Grid.ColumnSpan="2">
+                                <DataGrid.Columns>
+                                    <DataGridTextColumn Header="id" Binding="{Binding idPersonneProperty, Mode=OneWay}" />
+                                    <DataGridTextColumn Header="nom" Binding="{Binding nomPersonneProperty}" />
+                                    <DataGridTextColumn Header="prénom" Binding="{Binding prenomPersonneProperty, Mode=TwoWay}" />
+                                    <DataGridTextColumn Header="Groupe" Binding="{Binding GroupePersonne, Mode=OneWay}" />
+                                </DataGrid.Columns>
+                            </DataGrid>
+                        </Grid>
+                        <Button x:Name="supprimerButton" Content="Supprimer" MouseDoubleClick="supprimerButton_MouseDoubleClick" BorderBrush="#FF545454" BorderThickness="5,5,5,1" Height="35" Width="201" Margin="290,0">
+                            <Button.Background>
+                                <RadialGradientBrush>
+                                    <GradientStop Color="#FFF26A66"/>
+                                </RadialGradientBrush>
+                            </Button.Background>
+                        </Button>
+                    </StackPanel>
+                </TabItem>
+            </TabControl>
+        </StackPanel>
+    </DockPanel>

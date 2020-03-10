@@ -1,0 +1,274 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{870C995D-E04C-43F8-9185-C7EC625E3CE9}</ProjectGuid>
+    <OutputType>WinExe</OutputType>
+    <RootNamespace>projetWPF2</RootNamespace>
+    <AssemblyName>projetWPF2</AssemblyName>
+    <TargetFrameworkVersion>v4.6.1</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <ProjectTypeGuids>{60dc8134-eba5-43b8-bcc9-bb4bc16c2548};{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}</ProjectTypeGuids>
+    <WarningLevel>4</WarningLevel>
+    <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
+    <Deterministic>true</Deterministic>
+    <NuGetPackageImportStamp>
+    </NuGetPackageImportStamp>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="BouncyCastle.Crypto, Version=1.8.3.0, Culture=neutral, PublicKeyToken=0e99375e54769942">
+      <HintPath>..\packages\BouncyCastle.1.8.3.1\lib\BouncyCastle.Crypto.dll</HintPath>
+    </Reference>
+    <Reference Include="EPPlus, Version=4.5.3.2, Culture=neutral, PublicKeyToken=ea159fdaa78159a1, processorArchitecture=MSIL">
+      <HintPath>..\packages\EPPlus.4.5.3.2\lib\net40\EPPlus.dll</HintPath>
+    </Reference>
+    <Reference Include="Google.Protobuf, Version=3.6.1.0, Culture=neutral, PublicKeyToken=a7d26565bac4d604, processorArchitecture=MSIL">
+      <HintPath>..\packages\Google.Protobuf.3.6.1\lib\net45\Google.Protobuf.dll</HintPath>
+    </Reference>
+    <Reference Include="MaterialDesignColors, Version=1.0.1.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\MaterialDesignColors.1.2.1\lib\net45\MaterialDesignColors.dll</HintPath>
+    </Reference>
+    <Reference Include="MaterialDesignThemes.Wpf, Version=1.0.1.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\MaterialDesignThemes.3.0.0\lib\net45\MaterialDesignThemes.Wpf.dll</HintPath>
+    </Reference>
+    <Reference Include="MySql.Data, Version=8.0.18.0, Culture=neutral, PublicKeyToken=c5687fc88969c44d, processorArchitecture=MSIL">
+      <HintPath>..\packages\MySql.Data.8.0.18\lib\net452\MySql.Data.dll</HintPath>
+    </Reference>
+    <Reference Include="MySql.Web, Version=6.6.6.0, Culture=neutral, PublicKeyToken=c5687fc88969c44d, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\WpfApp11\bin\Debug\MySql.Web.dll</HintPath>
+    </Reference>
+    <Reference Include="Renci.SshNet, Version=2016.1.0.0, Culture=neutral, PublicKeyToken=1cee9f8bde3db106, processorArchitecture=MSIL">
+      <HintPath>..\packages\SSH.NET.2016.1.0\lib\net40\Renci.SshNet.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.ComponentModel" />
+    <Reference Include="System.ComponentModel.DataAnnotations" />
+    <Reference Include="System.configuration" />
+    <Reference Include="System.Configuration.Install" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Drawing.Design" />
+    <Reference Include="System.Management" />
+    <Reference Include="System.Security" />
+    <Reference Include="System.Transactions" />
+    <Reference Include="System.Xml" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="System.Net.Http" />
+    <Reference Include="System.Xaml">
+      <RequiredTargetFramework>4.0</RequiredTargetFramework>
+    </Reference>
+    <Reference Include="WindowsBase" />
+    <Reference Include="PresentationCore" />
+    <Reference Include="PresentationFramework" />
+  </ItemGroup>
+  <ItemGroup>
+    <ApplicationDefinition Include="App.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </ApplicationDefinition>
+    <Compile Include="Ctrl\EtudeEspeceViewModel.cs" />
+    <Compile Include="DAL\DALEnsembles.cs" />
+    <Compile Include="DAL\DALEquipe.cs" />
+    <Compile Include="DAL\DALEspece.cs" />
+    <Compile Include="DAL\DALEtude.cs" />
+    <Compile Include="DAL\DALEtudeEspece.cs" />
+    <Compile Include="DAL\DALPersEquipe.cs" />
+    <Compile Include="DAL\DALPlageEnsemble.cs" />
+    <Compile Include="DAO\DAOEnsembles.cs" />
+    <Compile Include="DAO\DAOEquipe.cs" />
+    <Compile Include="DAO\DAOEspece.cs" />
+    <Compile Include="DAO\DAOEtude.cs" />
+    <Compile Include="DAO\DAOEtudeEspece.cs" />
+    <Compile Include="DAO\DAOPersEquipe.cs" />
+    <Compile Include="DAO\DAOPlageEnsemble.cs" />
+    <Compile Include="Ctrl\EnsemblesViewModel.cs" />
+    <Compile Include="Ctrl\EquipeViewModel.cs" />
+    <Compile Include="Ctrl\EspeceViewModel.cs" />
+    <Compile Include="Ctrl\EtudeViewModel.cs" />
+    <Compile Include="ORM\EnsemblePlageORM.cs" />
+    <Compile Include="ORM\EquipeORM.cs" />
+    <Compile Include="ORM\EspeceORM.cs" />
+    <Compile Include="ORM\EtudeEspeceORM.cs" />
+    <Compile Include="ORM\EtudeORM.cs" />
+    <Compile Include="ORM\PersEquipeORM.cs" />
+    <Compile Include="ORM\PlageEnsembleORM.cs" />
+    <Compile Include="Vue\Login.xaml.cs">
+      <DependentUpon>Login.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Vue\PageAddPlage.xaml.cs">
+      <DependentUpon>PageAddPlage.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Vue\PageEnsemblePlages.xaml.cs">
+      <DependentUpon>PageEnsemblePlages.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Vue\PageEquipe.xaml.cs">
+      <DependentUpon>PageEquipe.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Vue\PageEspeces.xaml.cs">
+      <DependentUpon>PageEspeces.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Vue\PageEtude.xaml.cs">
+      <DependentUpon>PageEtude.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Vue\PageListPlages.xaml.cs">
+      <DependentUpon>PageListPlages.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Vue\PageMenu.xaml.cs">
+      <DependentUpon>PageMenu.xaml</DependentUpon>
+    </Compile>
+    <Page Include="Vue\Login.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Vue\PageAddPersonne.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Vue\PageAddPlage.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Vue\PageEnsemblePlages.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Vue\PageEquipe.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Vue\PageEspeces.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Vue\PageEtude.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Vue\PageListCommune.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Vue\PageListDepartements.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Vue\PageListPersonne.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Vue\MainWindow.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Compile Include="App.xaml.cs">
+      <DependentUpon>App.xaml</DependentUpon>
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Ctrl\CommuneViewModel.cs" />
+    <Compile Include="Ctrl\DepartementViewModel.cs" />
+    <Compile Include="Ctrl\GroupeViewModel.cs" />
+    <Compile Include="Ctrl\PersonneViewModel.cs" />
+    <Compile Include="Ctrl\PlageViewModel.cs" />
+    <Compile Include="DAL\DALCommune.cs" />
+    <Compile Include="DAL\DALConnection.cs" />
+    <Compile Include="DAL\DALDepartement.cs" />
+    <Compile Include="DAL\DALPersonne.cs" />
+    <Compile Include="DAL\DALGroupe.cs" />
+    <Compile Include="DAL\DALPlage.cs" />
+    <Compile Include="DAO\DAOCommune.cs" />
+    <Compile Include="DAO\DAODepartement.cs" />
+    <Compile Include="DAO\DAOPersonne.cs" />
+    <Compile Include="DAO\DAOGroupe.cs" />
+    <Compile Include="DAO\DAOPlage.cs" />
+    <Compile Include="ORM\CommuneORM.cs" />
+    <Compile Include="ORM\DepartementORM.cs" />
+    <Compile Include="ORM\GroupeORM.cs" />
+    <Compile Include="ORM\PersonneORM.cs" />
+    <Compile Include="ORM\PlageORM.cs" />
+    <Compile Include="Vue\PageAddPersonne.xaml.cs">
+      <DependentUpon>PageAddPersonne.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Vue\PageListCommune.xaml.cs">
+      <DependentUpon>PageListCommune.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Vue\PageListDepartements.xaml.cs">
+      <DependentUpon>PageListDepartements.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Vue\PageListPersonne.xaml.cs">
+      <DependentUpon>PageListPersonne.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Vue\MainWindow.xaml.cs">
+      <DependentUpon>MainWindow.xaml</DependentUpon>
+      <SubType>Code</SubType>
+    </Compile>
+    <Page Include="Vue\PageListPlages.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Vue\PageMenu.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Properties\AssemblyInfo.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Resources.resx</DependentUpon>
+    </Compile>
+    <Compile Include="Properties\Settings.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Settings.settings</DependentUpon>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+    </Compile>
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+    <None Include="packages.config" />
+    <None Include="Properties\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="App.config" />
+  </ItemGroup>
+  <ItemGroup />
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <Import Project="..\packages\MaterialDesignThemes.3.0.0\build\MaterialDesignThemes.targets" Condition="Exists('..\packages\MaterialDesignThemes.3.0.0\build\MaterialDesignThemes.targets')" />
+  <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">
+    <PropertyGroup>
+      <ErrorText>This project references NuGet package(s) that are missing on this computer. Use NuGet Package Restore to download them.  For more information, see http://go.microsoft.com/fwlink/?LinkID=322105. The missing file is {0}.</ErrorText>
+    </PropertyGroup>
+    <Error Condition="!Exists('..\packages\MaterialDesignThemes.3.0.0\build\MaterialDesignThemes.targets')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\MaterialDesignThemes.3.0.0\build\MaterialDesignThemes.targets'))" />
+  </Target>
+</Project>

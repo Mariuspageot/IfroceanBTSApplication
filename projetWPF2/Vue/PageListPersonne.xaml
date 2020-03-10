@@ -1,0 +1,33 @@
+﻿<Page x:Class="projetWPF2.PageListPersonne"
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+      xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+      xmlns:local="clr-namespace:projetWPF2"
+      mc:Ignorable="d" 
+      d:DesignHeight="600" d:DesignWidth="1200"
+      Title="PageListPersonne" ShowsNavigationUI="False"
+      >
+
+    <Grid HorizontalAlignment="Center" VerticalAlignment="Top">
+        <StackPanel VerticalAlignment="Center" Margin="0,0,0,0.2" Height="600" Width="1200" HorizontalAlignment="Center">
+            <Grid Margin="10">
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="10*"/>
+                    <ColumnDefinition Width="9*"/>
+                </Grid.ColumnDefinitions>
+                <DataGrid x:Name="listePersonnes" ItemsSource="{Binding}" AutoGenerateColumns="false" HorizontalAlignment="Center" BorderBrush="Black" Background="#FFA4A4A4"  Grid.ColumnSpan="2" Width="300" VerticalAlignment="Center" Height="400" Margin="440,38,440,-38">
+                    <DataGrid.Columns>
+                        <DataGridTextColumn Header="id" Binding="{Binding idPersonneProperty, Mode=OneWay}" />
+                        <DataGridTextColumn Header="nom" Binding="{Binding nomPersonneProperty}" />
+                        <DataGridTextColumn Header="prénom" Binding="{Binding prenomPersonneProperty, Mode=TwoWay}" />
+                        <DataGridTextColumn Header="Groupe" Binding="{Binding GroupePersonne, Mode=OneWay}" />
+                    </DataGrid.Columns>
+                </DataGrid>
+            </Grid>
+        </StackPanel>
+            <Button x:Name="supprimerButton" Content="Supprimer" Height="35" Width="200" Margin="0,0,0,-455" Click="supprimerButton_Click"/>
+        <Button x:Name="GoAddPersonne" Content="Ajouter une personne" Height="35" Margin="-512,0,0,-455" Width="184" Click="GoAddPersonne_Click"/>
+        <Button x:Name="Retour" Content="Retour" Height="35" Margin="0,0,931,-455" Width="100" Click="Retour_click"/>
+    </Grid>
+</Page>
