@@ -91,21 +91,17 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </ApplicationDefinition>
+    <Compile Include="Ctrl\ComptageViewModel.cs" />
     <Compile Include="Ctrl\EtudeEspeceViewModel.cs" />
-    <Compile Include="DAL\DALEnsembles.cs" />
-    <Compile Include="DAL\DALEquipe.cs" />
+    <Compile Include="DAL\DALComptage.cs" />
     <Compile Include="DAL\DALEspece.cs" />
     <Compile Include="DAL\DALEtude.cs" />
-    <Compile Include="DAL\DALEtudeEspece.cs" />
-    <Compile Include="DAL\DALPersEquipe.cs" />
-    <Compile Include="DAL\DALPlageEnsemble.cs" />
+    <Compile Include="DAL\DALNbEspeces.cs" />
+    <Compile Include="DAL\DALPlageEtude.cs" />
+    <Compile Include="DAO\DAOComptage.cs" />
     <Compile Include="DAO\DAOEnsembles.cs" />
-    <Compile Include="DAO\DAOEquipe.cs" />
     <Compile Include="DAO\DAOEspece.cs" />
     <Compile Include="DAO\DAOEtude.cs" />
-    <Compile Include="DAO\DAOEtudeEspece.cs" />
-    <Compile Include="DAO\DAOPersEquipe.cs" />
-    <Compile Include="DAO\DAOPlageEnsemble.cs" />
     <Compile Include="Ctrl\EnsemblesViewModel.cs" />
     <Compile Include="Ctrl\EquipeViewModel.cs" />
     <Compile Include="Ctrl\EspeceViewModel.cs" />

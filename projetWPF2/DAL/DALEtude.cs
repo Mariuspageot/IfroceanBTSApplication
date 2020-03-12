@@ -28,7 +28,7 @@ namespace projetWPF2
 
             while (reader.Read())
             {
-                DAOEtude p = new DAOEtude(reader.GetInt32(0), reader.GetString(1), reader.GetInt32(2), reader.GetDateTime(3), reader.GetInt32(4));
+                DAOEtude p = new DAOEtude(reader.GetInt32(0), reader.GetString(1), reader.GetDateTime(3), reader.GetInt32(4));
                 l.Add(p);
             }
             reader.Close();
@@ -37,14 +37,14 @@ namespace projetWPF2
 
         public static void updateEtude(DAOEtude p)
         {
-            string query = "UPDATE etude set titre=\"" + p.titreDAOEtude + "\", idEnsemblePlage=\"" + p.idEnsemblePlagesDAOEtude + "\", date=\"" + p.dateDAOEtude + "\", idEquipe=\"" +p.idEquipe +"\" where idEtude=" + p.idDAOEtude + ";";
+            string query = "UPDATE etude set titre=\"" + p.titreDAOEtude + "\", date=\"" + p.dateDAOEtude + "\", idChef=\"" +p.idChef +"\" where idEtude=" + p.idDAOEtude + ";";
             MySqlCommand cmd = new MySqlCommand(query, connection);
             MySqlDataAdapter sqlDataAdap = new MySqlDataAdapter(cmd);
             cmd.ExecuteNonQuery();
         }
         public static void insertEtude(DAOEtude p)
         {
-            string query = "INSERT INTO etude (`titre`, `idEnsemblePlage`, `date`,`idEquipe`) VALUES (\"" + p.titreDAOEtude + "\",\"" + p.idEnsemblePlagesDAOEtude + "\",\"" + p.dateDAOEtude + "\",\"" + p.idEquipe + "\");";
+            string query = "INSERT INTO etude (`titre`, `date`,`idChef`) VALUES (\"" + p.titreDAOEtude + "\",\"" + p.dateDAOEtude + "\",\"" + p.idChef + "\");";
             MySqlCommand cmd2 = new MySqlCommand(query, connection);
             MySqlDataAdapter sqlDataAdap = new MySqlDataAdapter(cmd2);
             cmd2.ExecuteNonQuery();
@@ -65,7 +65,7 @@ namespace projetWPF2
             cmd.ExecuteNonQuery();
             MySqlDataReader reader = cmd.ExecuteReader();
             reader.Read();
-            DAOEtude pers = new DAOEtude(reader.GetInt32(0), reader.GetString(1), reader.GetInt32(2), reader.GetDateTime(3), reader.GetInt32(4));
+            DAOEtude p = new DAOEtude(reader.GetInt32(0), reader.GetString(1), reader.GetDateTime(3), reader.GetInt32(4));
             reader.Close();
             return pers;
         }

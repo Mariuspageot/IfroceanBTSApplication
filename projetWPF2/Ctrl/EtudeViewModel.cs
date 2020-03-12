@@ -9,33 +9,22 @@ namespace projetWPF2
     {
         private int idEtude { get; set; }
         private string titreEtude { get; set; }
-        private EnsemblesViewModel listePlages { get; set; }
         private DateTime dateEtude { get; set; }
-        private EquipeViewModel equipeEtude { get; set; }
 
-        public EtudeViewModel(int id, string titre, EnsemblesViewModel plages, DateTime date, EquipeViewModel equipe)
+        public EtudeViewModel(int id, string titre, DateTime date)
         {
             idEtude = id;
             titreEtude = titre;
-            listePlages = plages;
             dateEtude = date;
-            equipeEtude = equipe;
         }
-        public EtudeViewModel(string titre, EnsemblesViewModel plages, DateTime date, EquipeViewModel equipe)
+        public EtudeViewModel(string titre, DateTime date)
         {
             titreEtude = titre;
-            listePlages = plages;
             dateEtude = date;
-            equipeEtude = equipe;
         }
         public int idEtudeProperty { get { return idEtude; } }
         public string titreEtudeProperty { get { return titreEtude; } }
-        public EnsemblesViewModel listePlagesProperty { get { return listePlages; } }
-
-        public string nomEnsembleProperty { get { return listePlagesProperty.nomEnsembleProperty; } }
         public DateTime dateEtudeProperty { get { return dateEtude; } }
-        public EquipeViewModel equipeEtudeProperty { get { return equipeEtude; } }
-        public string nomEquipeProperty { get { return equipeEtude.nomEquipeProperty; } }
 
         public event PropertyChangedEventHandler PropertyChanged;
 
